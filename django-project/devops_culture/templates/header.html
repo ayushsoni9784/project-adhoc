@@ -1,0 +1,61 @@
+{% load static %}
+	
+	<!-- Header -->
+
+	<header class="header d-flex flex-row justify-content-end align-items-center trans_200">
+		
+		<!-- Logo -->
+		<div class="logo mr-auto">
+			<a href="{% url 'index' %}">Ran<span>go</span></a>
+		</div>
+
+		<!-- Navigation -->
+		<nav class="main_nav justify-self-end text-right">
+			<ul>
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li><a href="{% url 'services' %}">Services</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+				<li><a href="{% url 'about' %}">About Us</a></li>
+				<li>
+					<div class="from-inline my-2 my-lg-0">
+						{% if user.is_authenticated %}
+							<a href="{% url 'logout' %}">
+							<button type="button" class="btn btn-outline-info">Logout</button>
+							</a>
+
+						{% else %}
+							<a href="{% url 'login' %}">
+							<button type="button" class="btn btn-outline-light">Login</button>
+							</a>
+						{% endif %}
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container bez_1">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+		
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu_container">
+		<div class="menu menu_mm text-right">
+			<div class="menu_close"><i class="far fa-times-circle trans_200"></i></div>
+			<ul class="menu_mm">
+				<li class="menu_mm active"><a href="#">Home</a></li>
+				<li class="menu_mm"><a href="services.html">Services</a></li>
+				<li class="menu_mm"><a href="blog.html">Blog</a></li>
+				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				<li class="menu_mm"><a href="about.html">About Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	
+
